@@ -1,5 +1,5 @@
 #include <iostream>
-#include <SFML/Graphic.hpp>
+#include <SFML/Graphics.hpp>
 
 class Obstacle : public sf::Drawable{
     private:

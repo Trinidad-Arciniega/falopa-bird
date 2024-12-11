@@ -4,7 +4,7 @@ Obstacle::Obstacle(sf::Texture &texture, int x,int y){
     upSprite.setTexture(texture);
     downSprite.setTexture(texture);
 
-    upSprite.setOrigin(texture.getSize(),0);
+    upSprite.setOrigin(texture.getSize().x,0);
     upSprite.setRotation(180);
 
     upSprite.setPosition(x,y);
@@ -19,17 +19,17 @@ void Obstacle::Update(){
     downSprite.move(-2.5f,0);
 }
 
-bool Obstcle::Collision(sf::IntRect rect){
+bool Obstacle::Collision(sf::IntRect rect){
     sf::IntRect rectUp(upSprite.getPosition().x+4,upSprite.getPosition().y-480,70,480);
     sf::IntRect rectDown(downSprite.getPosition().x+4,downSprite.getPosition().y,70,480);
-    if(rectUp.instersects(rect)||rectDown.intersects(rect)){
+   if(rectUp.intersects(rect)||rectDown.intersects(rect)){
         return true;
     }
     return false;
 }
 
 sf::Vector2f Obstacle::GetPosition(){
-    return upSprite;
+   return upSprite.getPosition();
 }
 
 void Obstacle::draw(sf::RenderTarget &rt,sf::RenderStates rs) const{

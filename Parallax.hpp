@@ -11,7 +11,7 @@ class Parallax : public sf::Drawable{
         sf::Texture obsT;
         sf::Texture baseT;
         std::vector<sf::Sprite> bases;
-        stsd::vector<Obstacle> obstacles;
+        std::vector<Obstacle> obstacles;
     public:
         Parallax();
         void Update();
