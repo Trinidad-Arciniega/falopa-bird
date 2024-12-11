@@ -38,20 +38,20 @@ UISound::UISound(){
     hit.setBuffer(hitB);
 
     score=0;
-    scoreT.setFont(font);
-    scoreT.setCharacterSize(40);
-    scoreT.setPosition(210,50);
-    scoreT.setString(std::to_string(score));
-    scoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);
-
+	scoreT.setFont(font);
+	scoreT.setCharacterSize(40);
+	scoreT.setString(std::to_string(score));
+	scoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);
+	scoreT.setPosition(210,50);
+    
     std::ifstream in("score");
     in>>maxScore;
 
     maxScoreT.setFont(font);
-    maxScoreT.setCharacterSize(20);
-    maxScoreT.setPosition(210,100);
-    maxScoreT.setString(std::to_string(maxScore));
-    maxScoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);
+	maxScoreT.setCharacterSize(20);
+	maxScoreT.setString(std::to_string(maxScore));
+	maxScoreT.setOrigin(maxScoreT.getGlobalBounds().width/2,maxScoreT.getGlobalBounds().height/2);	
+	maxScoreT.setPosition(210,100);
 
     gameOverS.setTexture(gameOverT);
     gameOverS.setOrigin(gameOverT.getSize().x/2,gameOverT.getSize().y/2);
@@ -79,7 +79,7 @@ void UISound::Initiated(bool state){
     std::ifstream in ("score");
     in>>maxScore;
     maxScoreT.setString(std::to_string(maxScore));
-    maxScoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);
+    maxScoreT.setOrigin(maxScoreT.getGlobalBounds().width/2,maxScoreT.getGlobalBounds().height/2);
     scoreT.setString(std::to_string(score));
     scoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);  
 

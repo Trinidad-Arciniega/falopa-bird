@@ -7,7 +7,7 @@ Parallax::Parallax(){
     if(!obsT.loadFromFile("resources/sprites/pipe.png")){
         std::cout<<"Error al cargar la textura resources/sprites/pipe.png"<<'\n';
     }
-    if(!obsT.loadFromFile("resources/sprites/base.png")){
+    if(!baseT.loadFromFile("resources/sprites/base.png")){
         std::cout<<"Error al cargar la textura resources/sprites/base.png"<<'\n';
     }
         

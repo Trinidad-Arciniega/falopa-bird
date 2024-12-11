@@ -20,7 +20,7 @@ int main(){
     bool initiated;
     bool pressed;
     
-    sf::RenderWindow window(sf::VideoMode(400,700),"Flappy Bird");
+    sf::RenderWindow window(sf::VideoMode(400,700),"Falopa Bird");
     window.setFramerateLimit(60);
     
     pressed=false;
