@@ -12,4 +12,5 @@ Falopa bird es un juego donde el jugador controla un personaje que sigue un cami
 ## Compilar
 
 Para compilar el proyecto ejecutar el comando
-
+...
+./Game
