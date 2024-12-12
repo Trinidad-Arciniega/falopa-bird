@@ -1,0 +1,69 @@
+  @startuml diagrama
+
+class Game {
+    - window : sf::RenderWindow
+    - pressed : bool
+    + Start()
+    + Update()
+    + End()
+}
+
+class Bird {
+    - initiated : bool
+    - live : bool
+    - state : int
+    - timerState : int
+    - states : vector<sf::Texture>
+    - sprite : sf::Sprite
+    - move : float
+    + Bird(x: int, y: int)
+    + Update()
+    + Jump()
+    + GetPosition() : sf::Vector2f
+    + GetLive() : bool
+    + Death()
+    + Initiated()
+    + draw(rt: sf::RenderTarget, rs: sf::RenderStates) : void
+}
+
+class Obstacle {
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    + Update()
+    + GetBounds() : sf::FloatRect
+    + draw(rt: sf::RenderTarget, rs: sf::RenderStates) : void
+}
+
+class Parallax {
+    - score : int
+    - obstacles : vector<Obstacle>
+    - background : sf::Sprite
+    + Update()
+    + Collision(rect: sf::IntRect) : bool
+    + Initiated()
+    + Score() : int
+    + draw(rt: sf::RenderTarget, rs: sf::RenderStates) : void
+}
+
+class UISound {
+    - score : int
+    - maxScore : int
+    - font : sf::Font
+    - pointB : sf::SoundBuffer
+    - music : sf::Music
+    + SetScore(val: int)
+    + Initiated(state: bool)
+    + Wing()
+    + GameOver()
+    + draw(rt: sf::RenderTarget, rs: sf::RenderStates) : void
+}
+
+Game "1" --> "1" Bird
+Game "1" --> "1" Parallax
+Game "1" --> "1" UISound
+
+Parallax "1" --> "*" Obstacle : aggregation
+Bird "1" ..> Parallax : "collision"
+Bird "1" ..> UISound : "sound effects"
+
+@enduml

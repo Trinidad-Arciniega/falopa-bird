@@ -39,16 +39,16 @@ UISound::UISound(){
 
     score=0;
 	scoreT.setFont(font);
-	scoreT.setCharacterSize(40);
+	scoreT.setCharacterSize(60);
 	scoreT.setString(std::to_string(score));
 	scoreT.setOrigin(scoreT.getGlobalBounds().width/2,scoreT.getGlobalBounds().height/2);
 	scoreT.setPosition(210,50);
     
-    std::ifstream in("score");
+    std::ifstream in("resources/score");
     in>>maxScore;
 
     maxScoreT.setFont(font);
-	maxScoreT.setCharacterSize(20);
+	maxScoreT.setCharacterSize(30);
 	maxScoreT.setString(std::to_string(maxScore));
 	maxScoreT.setOrigin(maxScoreT.getGlobalBounds().width/2,maxScoreT.getGlobalBounds().height/2);	
 	maxScoreT.setPosition(210,100);
@@ -76,7 +76,7 @@ void UISound::Initiated(bool state){
     initiated=state;
     score=0; 
     gameOver=false;
-    std::ifstream in ("score");
+    std::ifstream in ("resources/score");
     in>>maxScore;
     maxScoreT.setString(std::to_string(maxScore));
     maxScoreT.setOrigin(maxScoreT.getGlobalBounds().width/2,maxScoreT.getGlobalBounds().height/2);
@@ -93,7 +93,7 @@ void UISound::GameOver(){
     if(!gameOver) hit.play();
     if(score>maxScore){
         maxScore=score;
-        std::ofstream out("score");
+        std::ofstream out("resources/score");
         out<<score;
     }
     gameOver=true;
