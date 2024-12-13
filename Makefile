@@ -1,11 +1,10 @@
-# Compilador y banderas
 CXX = g++
 CXXFLAGS = -Iinclude -Wall -std=c++17
 
 # Librerías de SFML
 LIBS = -lsfml-audio -lsfml-graphics -lsfml-system -lsfml-window
 
-# Archivos fuente y binarios
+# Directorios
 SRC_DIR = src
 INC_DIR = include
 OBJ_DIR = obj
